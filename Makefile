@@ -10,6 +10,7 @@ BDIR=./bin
 
 # TARGETS
 bld:
+	mkdir -p $(BDIR)
 	$(CC) $(SDIR)/proc.c $(CFLAGS) -o $(BDIR)/proc
 
 run:
