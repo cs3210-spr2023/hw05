@@ -9,6 +9,8 @@
 
 - Run `$ make bld`.  Afterwards you should have a binary file in `./bin` directory.
 
+Please take a screenshot of every step you take in the Terminal application.  Please include these screenshots when you turn in the homework.
+
 ### What is a process?
 
 An instance of a program is called a *process*. In simple terms, any command that you issue in Linux starts a new process. You can have multiple processes for the same program.  Processes can be divided into two types:
@@ -23,9 +25,16 @@ An instance of a program is called a *process*. In simple terms, any command tha
 To start a foreground process, you can either run it from the UI dashboard or from the terminal.  When using the terminal you will have to wait for the foreground process to run.
 
 Examples:
-
 ```bash
 home@linux:~$ ./bin/proc
+```
+
+Example Output:
+```bash
+Mon 2022-12-12 14:50:37 MST - foreground
+Mon 2022-12-12 14:50:47 MST - foreground
+Mon 2022-12-12 14:50:57 MST - foreground
+Mon 2022-12-12 14:51:07 MST - foreground
 ```
 
 ### Running a background process
@@ -35,5 +44,6 @@ When you start a foreground process from the terminal then you cannot work on th
 ```bash
 $ ./bin/proc
 ^Z
-
 ```
+
+
