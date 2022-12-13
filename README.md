@@ -137,4 +137,24 @@ Example Output:
 F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
 ```
 
+### Killing a process
+
+Though it doesn't happen a lot but sometimes an application crashes or locks up. If an application becomes completely unresponsive we can easily kill the process.  First, we need to identify the process id, using the tools described above. Second, we use the `kill` command with the process id.
+
+Example:
+
+```bash
+$ pgrep proc
+13144
+$ kill 13144
+[1]  + 13144 terminated  ./bin/proc
+```
+
+Sometimes a process can be difficult and NOT terminate.  In that case you can use `-9` argument to force termination.
+
+Example:
+
+```bash
+$ kill -9 13144
+```
 
