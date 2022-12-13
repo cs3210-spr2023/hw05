@@ -1,6 +1,5 @@
 # Homework 05 - Process Management
 
-
 ## Last name, first name
 
 `Github username`
@@ -37,7 +36,7 @@ Mon 2022-12-12 14:50:57 MST - foreground
 Mon 2022-12-12 14:51:07 MST - foreground
 ```
 
-### Running a background process
+### Managing a background process
 
 When you start a foreground process from the terminal then you cannot work on the terminal until the process is up and running. Some data intensive tasks take a lot of processing resources and may even take hours to complete. In that case you do not want to the terminal held up for such a long time.  In Linux to avoid such a situation you can send the process to the background so that the terminal remains available.  Here is how you accomplish this:
 
@@ -46,6 +45,15 @@ Example:
 Mon 2022-12-12 14:54:41 MST - foreground
 ^Z
 [1]  + 7398 suspended  ./bin/proc
+```
+
+You can use the `fg` command to bring the suspended process back into the foreground.
+
+Example:
+```bash
+$ fg ./bin/proc
+[1]  + 20239 continued  ./bin/proc
+Tue 2022-12-13 15:24:13 MST - foreground
 ```
 
 ### Review running processes
@@ -137,6 +145,17 @@ Example Output:
 F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
 ```
 
+You can also use the Linux com, suspended,mand `jobs` to see if there are any paused, suspended, or background processes running.
+
+Example:
+
+```bash
+$ jobs
+[1]  - suspended  ./bin/proc
+[2]  + suspended  ./bin/proc
+
+```
+
 ### Killing a process
 
 Though it doesn't happen a lot but sometimes an application crashes or locks up. If an application becomes completely unresponsive we can easily kill the process.  First, we need to identify the process id, using the tools described above. Second, we use the `kill` command with the process id.
@@ -157,4 +176,25 @@ Example:
 ```bash
 $ kill -9 13144
 ```
+
+### Summary
+
+**`top`** and **`htop`**
+> View real-time data about processes running on the system.
+
+**`ps`**
+> Get a listing of processes running on the system.
+
+**`kill`**
+> Terminates a running process.
+
+**`jobs`**
+> Displays a list of current jobs running in the background.
+
+**`fg`**
+> Move a background process into the foreground.
+
+**`ctrl+z`**
+> Pause the current foreground process and move it into the background.
+
 
